@@ -5,6 +5,7 @@ import { Registro } from './componentes/Registro/Registro.jsx';
 import { Contactanos } from './componentes/Contactanos/Contactanos.jsx';
 import { Servicios } from './componentes/Servicios/Servicios.jsx';
 import RealizarEnvio from './componentes/RealizarEnvio/RealizarEnvio.jsx';
+import { UsuarioExterno } from './componentes/UsuarioExterno/UsuarioExterno.jsx';
 
 export function Rutas() {
     return (
@@ -14,6 +15,7 @@ export function Rutas() {
             <Route path="/contactanos" element={<Contactanos />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/realizarenvio" element={<RealizarEnvio />} />
+            <Route path="/usuarioexterno" element={<UsuarioExterno />} />
         </Routes>
     )
 }
