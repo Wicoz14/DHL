@@ -6,6 +6,10 @@ import { Contactanos } from './componentes/Contactanos/Contactanos.jsx';
 import { Servicios } from './componentes/Servicios/Servicios.jsx';
 import RealizarEnvio from './componentes/RealizarEnvio/RealizarEnvio.jsx';
 import { UsuarioExterno } from './componentes/UsuarioExterno/UsuarioExterno.jsx';
+import { UsuarioMensajeria } from './componentes/UsuarioMensajeria/UsuarioMensajeria.jsx';
+import { Solicitudes } from './componentes/Solicitudes/Solicitudes.jsx';
+import { EstadoEnvio } from './componentes/EstadoEnvio/EstadoEnvio.jsx';
+import { Reportes } from './componentes/Reportes/Reportes.jsx';
 import Usuario from "./componentes/Dashboard/Usuario.jsx"
 import { RegistroMensajero } from './componentes/Dashboard/RegistroMensajero.jsx';
 import Pedidos from './componentes/Dashboard/Pedidos.jsx'
@@ -19,9 +23,13 @@ export function Rutas() {
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/realizarenvio" element={<RealizarEnvio />} />
             <Route path="/usuarioexterno" element={<UsuarioExterno />} />
-            <Route path="/Usuario" element={ <Usuario/>}/>
+            <Route path="/Usuario" element={ <Usuario/>}/>realizarenvio
             <Route path="/Usuario/Registro" element={<RegistroMensajero/>} />
             <Route path="/Pedidos" element={ <Pedidos/>}/>
+            <Route path="/usuariomensajeria" element={ <UsuarioMensajeria/>}/>
+            <Route path="/solicitudes" element={ <Solicitudes/>}/>
+            <Route path="/estadoenvio" element={ <EstadoEnvio/>}/>
+            <Route path="/reportes" element={ <Reportes/>}/>
         </Routes>
     )
 }
