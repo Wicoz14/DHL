@@ -1,0 +1,16 @@
+.card{
+    margin-top: 20px;
+}
+
+.Botones{
+    margin-bottom: 40px;
+} 
+.Botones button{
+    margin-right: 10px;
+    width: 110px;
+    height: 30px;
+} 
+.contenedor{
+    margin-left:10%;
+    
+}

@@ -1,0 +1,34 @@
+.registro{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    background: red;
+}
+.selector{
+    margin-left: 3rem;
+    width: 60%;
+    border-radius: 0.85rem ;
+    border: 1px solid #c00974;
+}
+
+.registrolabel{
+    color:black;
+    margin-left: 3rem;
+}
+
+.textcheck{
+    color:black;
+}
+
+.botonregistrarse{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contenedorregistro{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.form-control{
+    width: 60%;
+}
