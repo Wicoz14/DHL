@@ -6,6 +6,8 @@ import { Contactanos } from './componentes/Contactanos/Contactanos.jsx';
 import { Servicios } from './componentes/Servicios/Servicios.jsx';
 import RealizarEnvio from './componentes/RealizarEnvio/RealizarEnvio.jsx';
 import { UsuarioExterno } from './componentes/UsuarioExterno/UsuarioExterno.jsx';
+import { UMisEnvios } from './componentes/UMisEnvios/UMisEnvios.jsx';
+import { Perfil } from './componentes/Perfil/Perfil.jsx';
 
 export function Rutas() {
     return (
@@ -16,6 +18,8 @@ export function Rutas() {
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/realizarenvio" element={<RealizarEnvio />} />
             <Route path="/usuarioexterno" element={<UsuarioExterno />} />
+            <Route path="/umisenvios" element={<UMisEnvios />} />
+            <Route path="/perfil" element={<Perfil />} />
         </Routes>
     )
 }
