@@ -10,6 +10,8 @@ import { UsuarioMensajeria } from './componentes/UsuarioMensajeria/UsuarioMensaj
 import { Solicitudes } from './componentes/Solicitudes/Solicitudes.jsx';
 import { EstadoEnvio } from './componentes/EstadoEnvio/EstadoEnvio.jsx';
 import { Reportes } from './componentes/Reportes/Reportes.jsx';
+import { UMisEnvios } from './componentes/UMisEnvios/UMisEnvios.jsx';
+import { Perfil } from './componentes/Perfil/Perfil.jsx';
 import Usuario from "./componentes/Dashboard/Usuario.jsx"
 import { RegistroMensajero } from './componentes/Dashboard/RegistroMensajero.jsx';
 import Pedidos from './componentes/Dashboard/Pedidos.jsx'
@@ -24,6 +26,9 @@ export function Rutas() {
             <Route path="/realizarenvio" element={<RealizarEnvio />} />
             <Route path="/usuarioexterno" element={<UsuarioExterno />} />
             <Route path="/Usuario" element={ <Usuario/>}/>realizarenvio
+            <Route path="/umisenvios" element={<UMisEnvios />} />
+            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/Usuario" element={ <Usuario/>}/>
             <Route path="/Usuario/Registro" element={<RegistroMensajero/>} />
             <Route path="/Pedidos" element={ <Pedidos/>}/>
             <Route path="/usuariomensajeria" element={ <UsuarioMensajeria/>}/>
