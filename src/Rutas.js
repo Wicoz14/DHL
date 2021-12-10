@@ -25,7 +25,7 @@ export function Rutas() {
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/realizarenvio" element={<RealizarEnvio />} />
             <Route path="/usuarioexterno" element={<UsuarioExterno />} />
-            <Route path="/Usuario" element={ <Usuario/>}/>realizarenvio
+            <Route path="/Usuario" element={ <Usuario/>}/>
             <Route path="/umisenvios" element={<UMisEnvios />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/Usuario" element={ <Usuario/>}/>

@@ -4,7 +4,7 @@ import './Solicitudes.css'
 export function Solicitudes() {
     return (
         <Fragment>
-            <div className="container px-5 cajasolicitudes">
+            <div className="container px-2 cajasolicitudes">
                 <div className="table-responsive">
                 <table class="table table-dark table-striped">
                     <thead>

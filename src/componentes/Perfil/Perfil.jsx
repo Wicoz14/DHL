@@ -5,8 +5,8 @@ import perfiles from '../../img/perfiles.png';
 
 export function Perfil() {
     return (
-        <div className="cuadrado2">
-            <div class="card mb-3">
+        <div className="container px-5 contenedorperfil">
+            <div class="card mb-3 tarjetaperfil">
             <div class="row g-0">
                 <div class="col-md-4">
                 <img src={perfiles} class="img-fluid rounded-start" alt="..."/>

@@ -1,6 +1,9 @@
-.cuadrado2{
-    height: 38rem;
-    width: 90%;
-    padding-top: 6rem;
-    padding-left: 8rem;
+.contenedorperfil{
+   margin-top: 7rem;
+   margin-bottom: 7rem;
+}
+
+.tarjetaperfil{
+    width: 70%;
+    height: 20rem;
 }

@@ -4,7 +4,7 @@ import './Reportes.css'
 export function Reportes() {
     return (
         <Fragment>
-            <div className="container px-5 cajareportes">
+            <div className="container px-3 cajareportes">
                 <div className="row gx-5 align-items-center justify-content-center">
                     <div className="col-lg-8 col-xl-7 col-xxl-6">
                         <form>
@@ -20,7 +20,7 @@ export function Reportes() {
                                 <button type="button" className="btn btn-primary textoslabel">Generar reporte</button>
                             </div>
                         </form>
-                        <div className="container px-5 cajasolicitudes">
+                        <div className="container px-0 cajasolicitudes">
                             <div className="table-responsive">
                                 <table class="table table-dark table-striped">
                                     <thead>
@@ -75,7 +75,7 @@ export function Reportes() {
                                 <button type="button" className="btn btn-primary textoslabel">Generar reporte</button>
                             </div>
                         </form>
-                        <div className="container px-5 cajasolicitudes">
+                        <div className="container px-0 cajasolicitudes">
                             <div className="table-responsive">
                                 <table class="table table-success table-striped">
                                     <thead>

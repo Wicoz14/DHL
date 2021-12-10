@@ -8,8 +8,7 @@ import './UsuarioExterno.css';
 
 export function UsuarioExterno() {
     return (
-        
-        <div className="cuadrado">
+        <div className="container px-5 contenedorusuarioexterno">
             <div class="row justify-content-start">
                 <div class="col-sm-4">
                     <div class="card">
