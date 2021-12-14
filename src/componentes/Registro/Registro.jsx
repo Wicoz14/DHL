@@ -14,27 +14,28 @@ export function Registro() {
     const confirmarcontraseñaRef = useRef();
     const chequeadoRef = useRef();
 
-    const registrarse = () => {
+    async function registrarse() {
         const nombres = nombresRef.current.value;
         const apellidos = apellidosRef.current.value;
-        const documento = documentoRef.current.value;
+        const tipodocumento = documentoRef.current.value;
         const numerodocumento = numerodocumentoRef.current.value;
         const correo = correoRef.current.value;
         const usuario = usuarioRef.current.value;
         const contraseña = contraseñaRef.current.value;
         const confirmarcontraseña = confirmarcontraseñaRef.current.value;
         const chequeado = chequeadoRef.current.checked;
+        const rol = "usuarioexterno";
+        const recuperar = false;
 
-        if (validar(nombres, apellidos, numerodocumento, correo, usuario, contraseña, confirmarcontraseña, chequeado)) {
-            registrar(nombres, apellidos, documento, numerodocumento, correo, usuario, contraseña);
-            nombresRef.current.value = "";
-            apellidosRef.current.value = "";
-            documentoRef.current.value = "Choose...";
-            numerodocumentoRef.current.value = "";
-            correoRef.current.value = "";
-            usuarioRef.current.value = "";
-            contraseñaRef.current.value = "";
-            confirmarcontraseñaRef.current.value = "";
+        if (await validar(nombres, apellidos, numerodocumento, correo, usuario, contraseña, confirmarcontraseña, chequeado)) {
+            let respuesta = await registrar(nombres, apellidos, tipodocumento, numerodocumento, correo, usuario, contraseña, rol, recuperar);
+            if (respuesta.estado === "Ok") {
+                alert(respuesta.msg);
+                window.location.ref = "/";
+            }
+            else {
+                alert(respuesta.msg);
+            }
         }
     }
     return (

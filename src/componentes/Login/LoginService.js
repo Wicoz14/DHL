@@ -1,25 +1,19 @@
-function login(usuario,contraseña){
-    const logearse = {user: usuario, password: contraseña};
-    console.log(logearse);
-    fetch(``,{
+async function login(usuario,contraseña){
+    const response = await  fetch(`http://localhost:8080/usuario/login`,{
         method: "POST", 
         headers: {"content-type":"application/json"},
-        body: JSON.stringify(logearse)
-    }).then( data => data.json()).then(data => {
-        alert("logeado")
-    })
+        body: JSON.stringify({usuario, contraseña})
+    });
+    return response.json();
 };
 
-function recuperar(correo){
-    const correorecuperar = {correo};
-    console.log(correorecuperar);
-    fetch(``,{
+async function recuperar(correo){
+    const response = await fetch(`http://localhost:8080/usuario/recuperarcontrasena`,{
         method: "POST", 
         headers: {"content-type":"application/json"},
-        body: JSON.stringify(correorecuperar)
-    }).then( data => data.json()).then(data => {
-        alert("Nueva contraseña enviada a su correo")
-    })
+        body: JSON.stringify({correo})
+    });
+    return response.json();
 };
 
 function validar(usuario,contraseña){
