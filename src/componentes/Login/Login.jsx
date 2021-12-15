@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import envio from '../../img/envio.png';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './Login.css'
 import { login, recuperar, validar, validarCorreo } from './LoginService.js'
 
@@ -8,21 +8,38 @@ export function Login() {
   const usuarioRef = useRef();
   const contraseñaRef = useRef();
   const correoRef = useRef();
-  const logearse = () => {
+  
+  async function logearse(){
     const usuario = usuarioRef.current.value;
     const contraseña = contraseñaRef.current.value;
-    if (validar(usuario, contraseña)) {
-      login(usuario, contraseña);
-      usuarioRef.current.value = "";
-      contraseñaRef.current.value = "";
+    if (await validar(usuario, contraseña)) {
+        let respuesta = await login(usuario,contraseña);
+        if(respuesta.recuperar===true){
+          window.location.href = "/recuperarcontrasena"
+        }
+        else if(respuesta.estado==="Ok"){
+          window.location.href = "/usuarioexterno"
+        }
+        else{
+          alert(respuesta.msg);
+          usuarioRef.current.value = "";
+          contraseñaRef.current.value = "";
+        }
     }
   };
 
-  const recuperarContraseña = () => {
+  async function recuperarContraseña() {
     const correo = correoRef.current.value;
-    if (validarCorreo(correo)){
-      recuperar(correo);
-      correoRef.current.value = "";
+    if ( await validarCorreo(correo)){
+      let respuesta = await recuperar(correo);
+      if(respuesta.estado==="Ok"){
+        alert(respuesta.msg);
+        correoRef.current.value = "";
+        window.location.href = "/"
+      }
+      else{
+        alert(respuesta.msg);
+      }
     }
   }
   return (

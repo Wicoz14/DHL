@@ -14,9 +14,14 @@ import { UMisEnvios } from './componentes/UMisEnvios/UMisEnvios.jsx';
 import { Perfil } from './componentes/Perfil/Perfil.jsx';
 import Usuario from "./componentes/Dashboard/Usuario.jsx"
 import { RegistroMensajero } from './componentes/Dashboard/RegistroMensajero.jsx';
+<<<<<<< HEAD
 import Dashboard from './componentes/Dashboard/Dashboard.jsx';
 import ListaPedidos from './componentes/Dashboard/ListaPedidos.jsx'
 /* import Pedidos from './componentes/Dashboard/Pedidos.jsx' */
+=======
+import Pedidos from './componentes/Dashboard/Pedidos.jsx'
+import { RecuperarContrasena } from './componentes/RecuperarContrasena/RecuperarContrasena.jsx';
+>>>>>>> e5042fe76aa5041ab242708005236f88fd690631
 
 export function Rutas() {
     return (
@@ -37,6 +42,7 @@ export function Rutas() {
             <Route path="/solicitudes" element={ <Solicitudes/>}/>
             <Route path="/estadoenvio" element={ <EstadoEnvio/>}/>
             <Route path="/reportes" element={ <Reportes/>}/>
+            <Route path="/recuperarcontrasena" element={ <RecuperarContrasena/>}/>
         </Routes>
     )
 }

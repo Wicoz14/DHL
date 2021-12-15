@@ -16,7 +16,6 @@ const RealizarEnvio = () => {
             <form>
               <div className="row gx-5 align-items-center">
                 <FormGroup label={'Día a recoger paquete'} type={'date'} id={'date'} />
-                <FormGroup label={'Zona horaria'} type={'text'} id={'zonaHora'} />
               </div>
               <div className="row gx-5 align-items-center">
                 <FormGroup label={'Alto'} type={'number'} id={'inputAlto'} />
@@ -30,10 +29,6 @@ const RealizarEnvio = () => {
 
                 <FormSelectDepto label={"Departamento"} label2={"Ciudad"} id={"depto"} id2={"city"} />
 
-              </div>
-              <div className="row gx-5 align-items-center">
-                <FormGroup label={'N° de identificación'} type={'text'} id={'idSolicitante'} />
-                <FormGroup label={'Nombre completo'} type={'text'} id={'NameSolicitante'} />
               </div>
               <div className="row gx-5 align-items-center">
                 <h3>Datos del receptor</h3>
