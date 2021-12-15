@@ -10,7 +10,7 @@ export default class App extends Component {
     return (
       <Fragment>
         <BrowserRouter>
-         {/*  <Layout /> */}
+          <Layout />
           <Rutas />
           <Footer />
         </BrowserRouter>
