@@ -1,4 +1,17 @@
+html{
+    min-height: 100%;
+    position: relative;
+}
+
 body{
+    height: 100%;
     background: rgb(21,45,138);
     background: linear-gradient(153deg, rgba(21,45,138,1) 0%, rgba(33,123,177,1) 20%, rgba(42,111,172,1) 29%, rgba(116,121,204,1) 39%, rgba(90,49,148,1) 56%);
+}
+
+Footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
 }

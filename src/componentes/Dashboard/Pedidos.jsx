@@ -1,6 +1,6 @@
-import React, { Fragment, useRef, useState } from "react";
+/* import React, { Fragment, useState } from "react";*/
 /* import {Container, containerModal} from "react-bootstrap"; */
-import ListaPedidos from "./ListaPedidos";
+/* import ListaPedidos from "./ListaPedidos";
 import "./Pedidos.css"
 
 const data=[{Id: "1", tipo:"normal",Dia:12, Direccion:"calle 21", EntegreA:"carlos", Estado:"pendiente",Mensajero:"alfred"},
@@ -46,4 +46,4 @@ const [listas,setListas]=useState(data)
   
       
 
-export default Pedidos
+export default Pedidos */

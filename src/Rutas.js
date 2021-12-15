@@ -14,7 +14,9 @@ import { UMisEnvios } from './componentes/UMisEnvios/UMisEnvios.jsx';
 import { Perfil } from './componentes/Perfil/Perfil.jsx';
 import Usuario from "./componentes/Dashboard/Usuario.jsx"
 import { RegistroMensajero } from './componentes/Dashboard/RegistroMensajero.jsx';
-import Pedidos from './componentes/Dashboard/Pedidos.jsx'
+import Dashboard from './componentes/Dashboard/Dashboard.jsx';
+import ListaPedidos from './componentes/Dashboard/ListaPedidos.jsx'
+/* import Pedidos from './componentes/Dashboard/Pedidos.jsx' */
 
 export function Rutas() {
     return (
@@ -25,12 +27,12 @@ export function Rutas() {
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/realizarenvio" element={<RealizarEnvio />} />
             <Route path="/usuarioexterno" element={<UsuarioExterno />} />
-            <Route path="/Usuario" element={ <Usuario/>}/>
             <Route path="/umisenvios" element={<UMisEnvios />} />
             <Route path="/perfil" element={<Perfil />} />
-            <Route path="/Usuario" element={ <Usuario/>}/>
-            <Route path="/Usuario/Registro" element={<RegistroMensajero/>} />
-            <Route path="/Pedidos" element={ <Pedidos/>}/>
+            <Route path="/usuario" element={ <Usuario/>}/>
+            <Route path="/registro-mensajero" element={<RegistroMensajero/>} />
+            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/lista-pedidos" element={ <ListaPedidos/>}/>
             <Route path="/usuariomensajeria" element={ <UsuarioMensajeria/>}/>
             <Route path="/solicitudes" element={ <Solicitudes/>}/>
             <Route path="/estadoenvio" element={ <EstadoEnvio/>}/>

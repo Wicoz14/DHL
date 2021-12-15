@@ -1,6 +1,6 @@
 import React, { Fragment, useRef } from 'react';
 import './RegistroMensajero.css';
-import { validar, registrar } from './RegistroMensajeroS.js';
+import { validar, registrar} from './RegistroMensajeroS.js';
 import registro from '../../img/registro.svg';
 
 export function RegistroMensajero() {
@@ -43,7 +43,7 @@ export function RegistroMensajero() {
                 <div className="row gx-5 align-items-center justify-content-center">
                     <div className="col-lg-8 col-xl-7 col-xxl-6">
                         <form>
-                            <h2 className="text-center">REGISTRO</h2>
+                            <h2 className="text-center">REGISTRO MENSAJERO</h2>
                             <div className="col-sm form-group">
                                 <label className="form- label registrolabel">Nombres</label>
                                 <input ref={nombresRef} type="text" className="form-control" placeholder="Nombres" required />
@@ -68,10 +68,6 @@ export function RegistroMensajero() {
                             <div className="col-sm form-group">
                                 <label className="form- label registrolabel">Nombre de usuario</label>
                                 <input ref={usuarioRef} type="text" className="form-control" placeholder="Usuario" />
-                            </div>
-                            <div className="col-sm form-group">
-                                <label className="form- label registrolabel">Rol</label>
-                                <input ref={usuarioRef} type="text" className="form-control" placeholder="Rol" />
                             </div>
                             <div className="col-sm form-group">
                                 <label className="form- label registrolabel">Contraseña</label>

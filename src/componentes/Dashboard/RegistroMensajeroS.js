@@ -1,7 +1,13 @@
 function validar(nombres, apellidos, numerodocumento, correo, usuario, contraseña, confirmarcontraseña,chequeado){
     
+    let verificarCorreo = !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(correo)
     let sw = true
 
+    if ((nombres.length===0) && (apellidos.length===0) && (numerodocumento.length===0 ) && (verificarCorreo) && (usuario.length===0) && (contraseña.length===0) && (confirmarcontraseña.length===0) && (chequeado=== false)){
+        alert(" Complete todos los campos ")
+        sw = false
+    }
+    else{
     if (nombres.length < 6) {
         alert("Escriba sus nombres completo")
         sw = false
@@ -40,7 +46,7 @@ function validar(nombres, apellidos, numerodocumento, correo, usuario, contrase�
     if (chequeado!== true){
         alert("Debe aceptar el check de tratamiento de datos")
         sw= false
-    }
+    }}
 
     if (sw){
         return true;

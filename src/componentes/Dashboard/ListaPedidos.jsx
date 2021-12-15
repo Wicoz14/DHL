@@ -1,7 +1,12 @@
 import React, {Fragment, useState} from "react";
-/* import {table} from "react-bootstrap"
- */
+
+
+
 function ListaPedidos({listas}){
+    
+    let listas2 = [{Id: "1", tipo:"normal",Dia:12, Direccion:"calle 21", EntegreA:"carlos", Estado:"pendiente",Mensajero:"alfred"},
+   {Id: "2", tipo:"Urgente",Dia:12, Direccion:"calle 21", EntegreA:"carlos", Estado:"pendiente",Mensajero:"alfred"}
+    ] 
 
     const[marcado,setMarcado]=useState(1)
     const CambioRadio = (event) =>{
@@ -9,7 +14,8 @@ function ListaPedidos({listas}){
 
     }
     return (<Fragment>
-<table className="table table-bordered ">
+        <div className="table-responsive">
+        <table className="table table-bordered ">
         <thead>
             <tr>
             <th scope="col"></th>
@@ -23,26 +29,27 @@ function ListaPedidos({listas}){
             </tr>
         </thead>
         <tbody>
-        {listas.map((lista)=> {
+           
+        {listas2.map((lista)=> {
            return( 
            <Fragment> 
             <tr>
-            <th scope="col"> <input   type="radio" value={lista.Id} checked={marcado == lista.Id ? true: false} onChange={CambioRadio}/></th>
+            <th scope="col"> <input   type="radio" value={lista.Id} checked={marcado === lista.Id ? true: false} onChange={CambioRadio}/></th>
             <th scope="row">{lista.Id}</th>
+            <td>{lista.tipo}</td>
+            <td>{lista.Dia}</td>
+            <td>{lista.Direccion}</td>
+            <td>{lista.EntegreA}</td>
+            <td>{lista.Estado}</td>
             <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            </tr>
+            </tr> 
 
             </Fragment>
-           )
-          
+           )  
         })} 
         </tbody>
-    </table> 
+    </table>   
+    </div>
     </Fragment>
     )
 
@@ -72,6 +79,7 @@ function ListaPedidos({listas}){
             
         </tbody>
     </table> 
+    
  */
 
 export default ListaPedidos
