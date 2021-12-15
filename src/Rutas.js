@@ -15,6 +15,7 @@ import { Perfil } from './componentes/Perfil/Perfil.jsx';
 import Usuario from "./componentes/Dashboard/Usuario.jsx"
 import { RegistroMensajero } from './componentes/Dashboard/RegistroMensajero.jsx';
 import Pedidos from './componentes/Dashboard/Pedidos.jsx'
+import { RecuperarContrasena } from './componentes/RecuperarContrasena/RecuperarContrasena.jsx';
 
 export function Rutas() {
     return (
@@ -35,6 +36,7 @@ export function Rutas() {
             <Route path="/solicitudes" element={ <Solicitudes/>}/>
             <Route path="/estadoenvio" element={ <EstadoEnvio/>}/>
             <Route path="/reportes" element={ <Reportes/>}/>
+            <Route path="/recuperarcontrasena" element={ <RecuperarContrasena/>}/>
         </Routes>
     )
 }

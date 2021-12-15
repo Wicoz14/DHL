@@ -51,7 +51,6 @@ function validar(nombres, apellidos, numerodocumento, correo, usuario, contrase�
 
 async function registrar(nombres, apellidos, tipodocumento, numerodocumento, correo, usuario, contraseña, rol, recuperar){
     const registro = {nombres, apellidos, tipodocumento, numerodocumento, correo, usuario, contraseña, rol,recuperar};
-    console.log(registro);
     const response = await fetch(`http://localhost:8080/usuario/registrousuario`,{
         method: "POST", 
         headers: {"content-type":"application/json"},

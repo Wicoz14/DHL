@@ -14,7 +14,10 @@ export function Login() {
     const contraseña = contraseñaRef.current.value;
     if (await validar(usuario, contraseña)) {
         let respuesta = await login(usuario,contraseña);
-        if(respuesta.estado==="Ok"){
+        if(respuesta.recuperar===true){
+          window.location.href = "/recuperarcontrasena"
+        }
+        else if(respuesta.estado==="Ok"){
           window.location.href = "/usuarioexterno"
         }
         else{
@@ -31,8 +34,8 @@ export function Login() {
       let respuesta = await recuperar(correo);
       if(respuesta.estado==="Ok"){
         alert(respuesta.msg);
-        usuarioRef.current.value = "";
-        contraseñaRef.current.value = "";
+        correoRef.current.value = "";
+        window.location.href = "/"
       }
       else{
         alert(respuesta.msg);
