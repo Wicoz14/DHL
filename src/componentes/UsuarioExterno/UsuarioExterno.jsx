@@ -36,7 +36,7 @@ export function UsuarioExterno() {
                         <div class="card-body">
                             <h5 class="card-title">Mis Envios</h5>
                             <p class="card-text">Informe y estado de cada uno de tus envíos.</p>
-                            <Link to="/umisenvios" class="btn btn-primary">Revizar</Link>
+                            <Link to="/umisenvios" class="btn btn-primary">Revisar</Link>
                         </div>
                     </div>
                 </div>

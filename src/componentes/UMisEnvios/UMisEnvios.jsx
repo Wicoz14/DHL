@@ -1,6 +1,6 @@
 import React from 'react';
 import './UMisEnvios.css';
-import misenvios from '../../img/misenvios.png';
+//import misenvios from '../../img/misenvios.png';
 
 export function UMisEnvios() {
     return (
@@ -31,7 +31,6 @@ export function UMisEnvios() {
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Rastrear</a></li>
                                         <li><a class="dropdown-item" href="#">Cancelar</a></li>
-                                        <li><a class="dropdown-item" href="#">Imprimir Comprobante</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -49,7 +48,6 @@ export function UMisEnvios() {
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Rastrear</a></li>
                                         <li><a class="dropdown-item" href="#">Cancelar</a></li>
-                                        <li><a class="dropdown-item" href="#">Imprimir Comprobante</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -67,7 +65,6 @@ export function UMisEnvios() {
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Rastrear</a></li>
                                         <li><a class="dropdown-item" href="#">Cancelar</a></li>
-                                        <li><a class="dropdown-item" href="#">Imprimir Comprobante</a></li>
                                     </ul>
                                 </div>
                             </td>
