@@ -2,12 +2,12 @@ function validar(nombres, apellidos, numerodocumento, correo, usuario, contrase√
     
     let sw = true
 
-    if (nombres.length < 6) {
+    if (nombres.length < 3) {
         alert("Escriba sus nombres completo")
         sw = false
     }
         
-    if (apellidos.length < 7) {
+    if (apellidos.length < 5) {
         alert("Escriba sus apellidos correctamente")
         sw = false
     }
