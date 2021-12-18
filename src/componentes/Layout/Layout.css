@@ -5,3 +5,9 @@
 .App-logo {
   height: 3rem; 
 }
+
+.bt2{
+  background-color: black;
+  border-radius: 10rem;
+  margin-top: 0.3rem;
+}

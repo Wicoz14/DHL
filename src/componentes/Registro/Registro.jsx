@@ -31,7 +31,7 @@ export function Registro() {
             let respuesta = await registrar(nombres, apellidos, tipodocumento, numerodocumento, correo, usuario, contraseña, rol, recuperar);
             if (respuesta.estado === "Ok") {
                 alert(respuesta.msg);
-                window.location.ref = "/";
+                window.location.href = "/"
             }
             else {
                 alert(respuesta.msg);

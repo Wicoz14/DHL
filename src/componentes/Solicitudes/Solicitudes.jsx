@@ -1,12 +1,22 @@
-import React, { Fragment } from "react";
-import './Solicitudes.css'
+import React, { Fragment, useState, useEffect } from "react";
+import './Solicitudes.css';
+import {ProteccionURL} from "../ProteccionURL/ProteccionURL";
+import { Navigate } from "react-router-dom";
+import {listarSolicitudes} from "./SolicitudesService.js"
 
 export function Solicitudes() {
-    return (
-        <Fragment>
+    const [listado, setListado] = useState([]);
+    useEffect(async () => {
+        const respuesta = await listarSolicitudes()
+        setListado(respuesta.solicitudes)
+    }, [])
+    function retornar() {
+        if (ProteccionURL() === 2) {
+            return (
+                <Fragment>
             <div className="container px-2 cajasolicitudes">
                 <div className="table-responsive">
-                <table class="table table-dark table-striped">
+                <table className="table table-dark table-striped">
                     <thead>
                         <tr>
                             <th scope="col"># del envío</th>
@@ -23,118 +33,29 @@ export function Solicitudes() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>carrera9#23-45</td>
-                            <td>Barranquilla</td>
-                            <td>Barranquilla</td>
-                            <td>carrera8#21-11</td>
-                            <td>Peso: 2kg, altura: 30cm, ancho:30cm</td>
-                            <td>20-nov-2021</td>
-                            <td><button type="button" className="btn btn-primary">Asignar</button></td>
-                            <td><input type="text" className="inputsolicitud" /></td>
-                        </tr>
+                        {
+                            listado.map(p => <tr>
+                                <th scope="row">{p._id}</th>
+                                <td>Mark</td>
+                                <td>{p.direccion}</td>
+                                <td>{p.ciudad}</td>
+                                <td>{p.ciudadentrega}</td>
+                                <td>{p.direccionentrega}</td>
+                                <td>{p.alto+"-"+p.largo+"-"+p.ancho}</td>
+                                <td>{p.fecharecogida}</td>
+                                <td><button type="button" className="btn btn-primary">Asignar</button></td>
+                                <td><input type="text" className="inputsolicitud" /></td>
+                            </tr>)
+                        }
                     </tbody>
                 </table>
                 </div>
-            </div>
+            </div> 
         </Fragment>
-    )
+            )
+        }else{
+            return(<Navigate to="/" />)
+        }
+    }
+    return retornar()
 }

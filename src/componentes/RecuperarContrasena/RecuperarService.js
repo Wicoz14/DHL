@@ -19,9 +19,10 @@ function validacionRecuperar(contraseña,confirmarcontraseña){
 }
 
 async function recuperarC(contraseña){
+    const token = localStorage.getItem("token");
     const response = await fetch(`http://localhost:8080/usuario/nuevacontrasena`,{
         method: "POST", 
-        headers: {"content-type":"application/json"},
+        headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify({contraseña})
     })
     return response.json();
