@@ -1,13 +1,13 @@
-function validar(nombres, apellidos, correo){
+function validaractualizacion(nombres, apellidos, correo){
     
     let sw = true
 
-    if (nombres.length < 6) {
+    if (nombres.length < 3) {
         alert("Escriba sus nombres completo")
         sw = false
     }
         
-    if (apellidos.length < 7) {
+    if (apellidos.length < 5) {
         alert("Escriba sus apellidos correctamente")
         sw = false
     }
@@ -26,7 +26,7 @@ function validar(nombres, apellidos, correo){
 
 async function perfil(){
     const token = localStorage.getItem("token")
-    const response = await fetch(`http://localhost:8080/usuario/mostrarperfil`,{
+    const response = await fetch(`http://localhost:8080/perfil/mostrarperfil`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify()
@@ -35,11 +35,11 @@ async function perfil(){
 };
 
 
-async function actualizar(nombres, apellidos, correo){
+async function actualizarusuario(nombres, apellidos, correo){
     const perfil = {nombres, apellidos,correo};
-    console.log(perfil);
+    //console.log(perfil);
     const token = localStorage.getItem("token")
-    const response = await fetch(`http://localhost:8080/usuario/modificarperfil`,{
+    const response = await fetch(`http://localhost:8080/perfil/modificarperfil`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify(perfil)
@@ -47,4 +47,4 @@ async function actualizar(nombres, apellidos, correo){
     return response.json();
 };
 
-export {validar,perfil,actualizar};
+export {validaractualizacion,perfil,actualizarusuario};

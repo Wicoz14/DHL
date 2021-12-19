@@ -1,84 +1,100 @@
-import React, { Fragment,useRef} from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import React, { Fragment, useRef, useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import './Perfil.css';
 import perfiles from '../../img/perfiles.png';
 import { ProteccionURL } from "../ProteccionURL/ProteccionURL";
-import { validar,perfil,actualizar } from './Perfil.js';
+import { validaractualizacion, perfil, actualizarusuario } from './Perfil.js';
 
 export function Perfil() {
-        const nombresRef = useRef();
-        const apellidosRef = useRef();
-        const documentoRef = useRef();
-        const numerodocumentoRef = useRef();
-        const correoRef = useRef();
-        const usuarioRef = useRef();
-        const respuestas =async() => await perfil();
-        console.log(respuestas);
-    
-        async function actualizarPerfil() {
-            const nombres = nombresRef.current.value;
-            const apellidos = apellidosRef.current.value;
-            const tipodocumento = documentoRef.current.value;
-            const numerodocumento = numerodocumentoRef.current.value;
-            const correo = correoRef.current.value;
-            const usuario = usuarioRef.current.value;
-            const rol = "usuarioexterno";
-    
-            if (await validar(nombres, apellidos, correo)) {
-                let respuesta = await actualizar(nombres, apellidos, correo);
-                if (respuesta.estado === "Ok") {
-                    alert(respuesta.msg);
-                    window.location.ref = "/";
-                }
-                else {
-                    alert(respuesta.msg);
-                }
+
+    const [listado, setListado] = useState([]);
+    useEffect(async () => {
+        const respuesta = await perfil()
+        setListado(respuesta.respuesta)
+    }, []);
+
+    const nombresactualizadosRef = useRef()
+    const apellidosactualizadosRef = useRef()
+    const correoactualizadoRef = useRef()
+
+    async function actualizar(){
+        const nombres = nombresactualizadosRef.current.value;
+        const apellidos = apellidosactualizadosRef.current.value;
+        const correo = correoactualizadoRef.current.value;
+
+        if (await validaractualizacion(nombres, apellidos, correo)) {
+            let respuesta = await actualizarusuario(nombres, apellidos,correo);
+            if (respuesta.estado === "Ok") {
+                alert(respuesta.msg);
+                window.location.href = "/perfil"
+            }
+            else {
+                alert(respuesta.msg);
             }
         }
+    }
 
     function retornar() {
         if (ProteccionURL() === 1) {
             return (
                 <Fragment>
                     <div className="container px-5 contenedorregistro">
-            <div className="row gx-5 align-items-center justify-content-center">
-                <div className="col-lg-8 col-xl-7 col-xxl-6">
-                    <form>
-                        <h2 className="text-center">PERFIL</h2>
-                        <div className="col-sm form-group">
-                            <label className="form- label registrolabel">Nombres</label>
-                            <input ref={nombresRef} type="text" className="form-control" placeholder="Nombres" required />
+                        <div className="row gx-5 align-items-center justify-content-center">
+                            <div className="col-lg-8 col-xl-7 col-xxl-6">
+                                <form>
+                                    <h2 className="text-center">PERFIL</h2>
+                                    <div className="col-sm form-group">
+                                        <label className="form- label registrolabel">Nombres</label>
+                                        <input value={listado.nombres} type="text" className="form-control" placeholder="Nombres" required disable/>
+                                    </div>
+                                    <div className="col-sm form-group">
+                                        <label className="form- label registrolabel">Apellidos</label>
+                                        <input value={listado.apellidos} type="text" className="form-control" placeholder="Apellidos" disable/>
+                                    </div>
+                                    <div className="col-sm form-group">
+                                        <label className="form- label registrolabel">Documento de identidad</label>
+                                        <input value={listado.tipodocumento} type="texto" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" disable/>
+                                        <input value={listado.numerodocumento} type="number" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" disable/>
+                                    </div>
+                                    <div className="col-sm form-group">
+                                        <label className="form- label registrolabel">Correo</label>
+                                        <input value={listado.correo} type="email" className="form-control" placeholder="Correo" disable/>
+                                    </div>
+                                    <div className="col-sm form-group">
+                                        <label className="form- label registrolabel">Nombre de usuario</label>
+                                        <input value={listado.usuario} type="text" className="form-control" placeholder="Usuario" disable/>
+                                    </div>
+                                    <div className="botonactualizar">
+                                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Modificar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img className="img-fluid rounded-3 my-5" src={perfiles} alt="..." /></div>
                         </div>
-                        <div className="col-sm form-group">
-                            <label className="form- label registrolabel">Apellidos</label>
-                            <input ref={apellidosRef} type="text" className="form-control" placeholder="Apellidos" />
+                        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="staticBackdropLabel">Asignar envío a:</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <div>
+                                            <label>Nombres</label>
+                                            <input type="text" ref={nombresactualizadosRef} />
+                                            <label>Apellidos</label>
+                                            <input type="text" ref={apellidosactualizadosRef} />
+                                            <label>Correo</label>
+                                            <input type="text" ref={correoactualizadoRef} />
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-primary" onClick={actualizar} >Actualizar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="col-sm form-group">
-                            <label className="form- label registrolabel">Documento de identidad</label>
-                            <select ref={documentoRef} className="form-select 
-                            selector" name="selector" disabled>
-                            <option value="CC">Cédula de ciudadanía</option>
-                            <option value="TI">Tarjeta de identidad</option>
-                            <option value="PE">Pasaporte de extrangería</option>
-                        </select>
-                            <input ref={numerodocumentoRef} type="number" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" disabled/>
-                        </div>
-                        <div className="col-sm form-group">
-                            <label className="form- label registrolabel">Correo</label>
-                            <input ref={correoRef} type="email" className="form-control" placeholder="Correo" />
-                        </div>
-                        <div className="col-sm form-group">
-                            <label className="form- label registrolabel">Nombre de usuario</label>
-                            <input ref={usuarioRef} type="text" className="form-control" placeholder="Usuario" disabled/>
-                        </div>
-                        <div className="botonactualizar">
-                            <button type="button" className="btn btn-primary" onClick={actualizarPerfil}>Actualizar</button>
-                        </div>
-                    </form>
-                </div>
-                <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img className="img-fluid rounded-3 my-5" src={perfiles} alt="..." /></div>
-            </div>
-        </div> 
+                    </div>
                 </Fragment>
             )
         } else {
