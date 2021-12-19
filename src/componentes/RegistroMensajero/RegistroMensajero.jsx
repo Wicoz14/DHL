@@ -42,7 +42,7 @@ export function RegistroMensajero() {
             <div className="container px-5 contenedorregistro">
                 <div className="row gx-5 align-items-center justify-content-center">
                     <div className="col-lg-8 col-xl-7 col-xxl-6">
-                        <form>
+                        <form className='formMensajero'>
                             <h2 className="text-center">REGISTRO MENSAJERO</h2>
                             <div className="col-sm form-group">
                                 <label className="form- label registrolabel">Nombres</label>

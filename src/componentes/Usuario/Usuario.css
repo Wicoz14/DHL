@@ -3,22 +3,23 @@
     margin-left: 10%;
     margin-right: 10%;
 }
-.card{
-    background: rgba(51, 51, 51, 0.857);
+.cardDashboardUser{
+     background: rgba(51, 51, 51, 0.857); 
     
 }
 .nav-link{
    color: white ;
 }
 
-.table{
+.dashboardTable{
     color: white;
 }
 
-form{
+.formMensajero label {
   color: white;  
+}  
+
+.formMensajero{
+    color: white;
 }
 
-form div{
-    color:red;
-}

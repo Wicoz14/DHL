@@ -5,11 +5,26 @@ import "./Usuario.css"
 function Usuario(){
     const [show, setShow]=useState(" ");
 
+const addUser = () =>{
+    setShow(
+        <div class="card-body">
+    
+        <div class="card-text registroMensajero">
+            <RegistroMensajero/>
+        
+        </div>
+    </div>
+        
+
+    )
+}    
+
+
 const externo = () =>{ 
     setShow(
     <div class="card-body">
         <div class="card-text">
-        <table class="table">
+        <table class="table dashboardTable">
         <thead>
             <tr>
             <th scope="col">#</th>
@@ -43,7 +58,7 @@ const mensajero = () =>{
         <div class="card-body">
         <button type="button" class="btn btn-primary" onClick={addUser}>Agregar usuario</button>
         <div class="card-text">
-        <table class="table">
+        <table className="table dashboardTable">
         <thead>
             <tr>
             <th scope="col">#</th>
@@ -72,27 +87,12 @@ const mensajero = () =>{
     )
 }
 
-
-
-const addUser = () =>{
-    setShow(
-        <div class="card-body">
-    
-        <div class="card-text">
-           <RegistroMensajero/>
-     
-        </div>
-    </div>
-        
-
-    )
-}
     
     return (<Fragment>
         <div className="contenedor">
         
 
-        <div class="card">
+        <div className="cardDashboardUser">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
