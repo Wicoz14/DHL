@@ -71,7 +71,7 @@ export function Perfil() {
                             <label className="form- label registrolabel">Nombre de usuario</label>
                             <input ref={usuarioRef} type="text" className="form-control" placeholder="Usuario" disabled/>
                         </div>
-                        <div className="botonregistrarse">
+                        <div className="botonactualizar">
                             <button type="button" className="btn btn-primary" onClick={actualizarPerfil}>Actualizar</button>
                         </div>
                     </form>

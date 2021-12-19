@@ -36,7 +36,6 @@ export function UMisEnvios() {
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Rastrear</a></li>
                                             <li><a class="dropdown-item" href="#">Cancelar</a></li>
-                                            <li><a class="dropdown-item" href="#">Imprimir Comprobante</a></li>
                                         </ul>
                                     </div>
                                 </td>
