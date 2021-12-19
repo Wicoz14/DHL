@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from "react";
+import "./ListaPedidos.css"
 
 
 
@@ -14,6 +15,25 @@ function ListaPedidos({listas}){
 
     }
     return (<Fragment>
+        
+        <div className="contenedor">
+        
+
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link " >Externo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " >Mensajero</a>
+                    </li>
+                </ul>
+               {/*  (imagen) Usuario */}
+            </div>
+        </div> 
+        </div>
+    
         <div className="table-responsive">
         <table className="table table-bordered ">
         <thead>

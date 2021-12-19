@@ -1,0 +1,24 @@
+.contenedor{
+    /* margin-bottom: 9rem; */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.card{
+    background: rgba(51, 51, 51, 0.857);
+    
+}
+.nav-link{
+   color: white ;
+}
+
+.table{
+    color: white;
+}
+
+form{
+  color: white;  
+}
+
+form div{
+    color:red;
+}

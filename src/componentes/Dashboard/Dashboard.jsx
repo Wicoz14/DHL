@@ -10,8 +10,8 @@ function Dashboard(){
                 <div className="col-6">
                     <div className="card"> 
                         <div class="card-body">
-                            <h5 class="card-title">Registrar mensajero</h5>
-                            <Link to="/registro-mensajero" className="btn btn-primary"> Registrar</Link>
+                            <h5 class="card-title">Usuario</h5>
+                            <Link to="/dashboard/usuario" className="btn btn-primary"> Acceder</Link>
                         </div>
                     </div>
                 </div>
