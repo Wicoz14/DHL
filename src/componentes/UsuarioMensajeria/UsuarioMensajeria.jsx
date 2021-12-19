@@ -45,7 +45,8 @@ export function UsuarioMensajeria() {
            </div>
        </Fragment>
           )
-        }else{
+        }
+        else{
             return(<Navigate to="/" />)
         }
     }

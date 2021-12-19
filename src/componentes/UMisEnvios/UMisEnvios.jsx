@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 
 export function UMisEnvios() {
     function retornar() {
-        if (ProteccionURL() === 1) {
+        if (ProteccionURL()=== 1) {
             return (
                 <Fragment>
                 <div className="container px-2 contenedormisenvios">

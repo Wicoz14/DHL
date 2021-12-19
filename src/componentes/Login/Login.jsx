@@ -48,6 +48,7 @@ export function Login() {
   }
 
   function retornar() {
+    console.log(ProteccionURL())
     if (ProteccionURL() === 0) {
       return (
         <Fragment>
@@ -104,11 +105,13 @@ export function Login() {
           </main>
         </Fragment>
       )
-    } else if (ProteccionURL===1){
+    } else if (ProteccionURL()===1){
       return (<Navigate to="/usuarioexterno" />)
     }
-    else{
+    else if(ProteccionURL()===2){
       return (<Navigate to="/usuariomensajeria" />)
+    }else{
+      return ( (<Navigate to="/" />))
     }
   }
 

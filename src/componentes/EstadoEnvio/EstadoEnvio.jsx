@@ -6,11 +6,11 @@ import { listarEstados, modificar } from "./EstadoService";
 
 export function EstadoEnvio() {
     const [listado, setListado] = useState([]);
-    useEffect(async () => {
+    useEffect( async () => {
         const respuesta = await listarEstados();
         setListado(respuesta.estados)
-    }, []);
-    const[id, setId] = useState("");
+    },[]);
+    const[_id, setId] = useState("");
 
     const caracteristicasRef = useRef();
     const comentariosRef= useRef();
@@ -21,11 +21,22 @@ export function EstadoEnvio() {
         setId(p._id);
     }
 
-    function modificarEstado(){
+    async function modificarEstado(){
         const caracteristicasfinales = caracteristicasRef.current.value;
-        const comentarios = comentarios.current.value;
+        const comentarios = comentariosRef.current.value;
         const fechaentrega = fechaentregaRef.current.value;
-        const estadoenvio = estadoenvio.current.value;
+        const estadoenvio = estadoenvioRef.current.value;
+        
+        const respuesta = await modificar(_id,caracteristicasfinales,comentarios,fechaentrega,estadoenvio);
+
+        if(respuesta.estado==="Ok"){
+            alert(respuesta.msg);
+            window.location.href = "/estadoenvio";
+        }
+        else{
+            alert(respuesta.msg);
+        }
+
     }
 
 
@@ -74,7 +85,7 @@ export function EstadoEnvio() {
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <label>{id}</label>
+                                        <label>{_id}</label>
                                         <div>
                                             <label>Caracteristicas finales</label>
                                             <input type="text" ref={caracteristicasRef}/>
