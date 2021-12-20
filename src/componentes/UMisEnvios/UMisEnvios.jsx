@@ -18,9 +18,9 @@ export function UMisEnvios() {
             return (
                 <Fragment>
                     <div className="container px-2 contenedormisenvios">
-                        <h5 className="card-title text-center">Mis Envíos</h5>
+                        <h5 className="card-title text-center text-white">Mis Envíos</h5>
                         <div className="table-responsive">
-                            <table className="table">
+                            <table className="table table-info table-striped">
                                 <thead>
                                     <tr>
                                         <th scope="col">Fecha De Registro:</th>
