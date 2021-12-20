@@ -2,3 +2,10 @@
     width: 8rem;
     border-radius: 4rem;
 }
+
+.selectorestadoenvio{
+    margin-left: 4rem;
+    width: 60%;
+    border-radius: 0.85rem;
+    border: 1px solid #c00974;
+}

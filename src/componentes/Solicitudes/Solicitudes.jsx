@@ -77,17 +77,23 @@ export function Solicitudes() {
                         </div>
                         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog">
-                                <div className="modal-content">
-                                    <div className="modal-header">
+                                <div className="modal-content text-center modalrecuperar text-white">
+                                    <div className="modal-header headerrecuperar">
                                         <h5 className="modal-title" id="staticBackdropLabel">Asignar envío a:</h5>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" className="btn-close closerecuperar" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div className="modal-body">
+                                    <div className="modal-body bodyrecuperar">
+                                        <div>
+                                        <h6>Número único de envío:</h6>
+                                        </div>
                                         <label>{_id}</label>
                                         <div>
-                                            <input type="text" ref={encargadoRef} />
+                                        <h6>Asignar a:</h6> 
                                         </div>
-                                        <div className="modal-footer">
+                                        <div>
+                                            <input type="text" className="form-control inputsolicitudes" ref={encargadoRef} />
+                                        </div>
+                                        <div className="modal-footer footerrecuperar">
                                             <button type="button" className="btn btn-primary" onClick={asignar}>Asignarlo</button>
                                         </div>
                                     </div>

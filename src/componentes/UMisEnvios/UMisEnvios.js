@@ -1,12 +1,10 @@
-async function actualizarenvios(id, fechaenvio, enviadoa, rastreo, accion){
-    const misenvios = {id, fechaenvio, enviadoa, rastreo, accion};
-    console.log(misenvios);
-    const response = await fetch(`http://localhost:8080/usuario/misenvios`,{
+async function listarmisenvios(){
+    const token = localStorage.getItem("token");
+    const response = await fetch(`http://localhost:8080/envios/misenvios`,{
         method: "POST", 
-        headers: {"content-type":"application/json"},
-        body: JSON.stringify(misenvios)
+        headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
     })
     return response.json();
 };
 
-export {actualizarenvios};
+export {listarmisenvios};
