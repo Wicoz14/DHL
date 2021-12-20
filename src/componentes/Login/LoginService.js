@@ -8,7 +8,7 @@ async function login(usuario,contraseña){
 };
 
 async function recuperar(correo){
-    const response = await fetch(`https://dhl-colombia.herokuapp.com/recuperarcontrasena`,{
+    const response = await fetch(`https://dhl-colombia.herokuapp.com/usuario/recuperarcontrasena`,{
         method: "POST", 
         headers: {"content-type":"application/json"},
         body: JSON.stringify({correo})

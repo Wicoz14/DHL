@@ -20,7 +20,7 @@ function validacionRecuperar(contraseña,confirmarcontraseña){
 
 async function recuperarC(contraseña){
     const token = localStorage.getItem("token");
-    const response = await fetch(`https://dhl-colombia.herokuapp.com/nuevacontrasena`,{
+    const response = await fetch(`https://dhl-colombia.herokuapp.com/usuario/nuevacontrasena`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify({contraseña})
