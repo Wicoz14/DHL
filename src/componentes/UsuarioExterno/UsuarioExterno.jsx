@@ -14,34 +14,34 @@ export function UsuarioExterno() {
             return (
                 <Fragment>
                     <div className="container px-5 contenedorusuarioexterno">
-                        <div class="row justify-content-start">
-                            <div class="col-sm-4">
-                                <div class="card">
+                        <div className="row justify-content-start">
+                            <div className="col-sm-4">
+                                <div className="card">
                                     <img src={perfil} class="img-fluid" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Mi Perfil</h5>
-                                        <p class="card-text">Manten al día tu información personal.</p>
-                                        <Link to="/perfil" class="btn btn-primary">Acceder</Link>
+                                    <div className="card-body">
+                                        <h5 className="card-title">Mi Perfil</h5>
+                                        <p className="card-text">Manten al día tu información personal.</p>
+                                        <Link to="/perfil" className="btn btn-primary">Acceder</Link>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <div class="card">
+                            <div className="col-sm-4">
+                                <div className="card">
                                     <img src={realizarenvio} class="img-fluid" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nuevo Envío</h5>
-                                        <p class="card-text">Realiza los envíos que requieras sin demoras.</p>
-                                        <Link to="/realizarenvio" class="btn btn-primary">Hacer Envío</Link>
+                                    <div className="card-body">
+                                        <h5 className="card-title">Nuevo Envío</h5>
+                                        <p className="card-text">Realiza los envíos que requieras sin demoras.</p>
+                                        <Link to="/realizarenvio" className="btn btn-primary">Hacer Envío</Link>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <div class="card">
-                                    <img src={misenvios} class="img-fluid" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Mis Envios</h5>
-                                        <p class="card-text">Informe y estado de cada uno de tus envíos.</p>
-                                        <Link to="/umisenvios" class="btn btn-primary">Revisar</Link>
+                            <div className="col-sm-4">
+                                <div className="card">
+                                    <img src={misenvios} className="img-fluid" alt="..." />
+                                    <div className="card-body">
+                                        <h5 className="card-title">Mis Envios</h5>
+                                        <p className="card-text">Informe y estado de cada uno de tus envíos.</p>
+                                        <Link to="/umisenvios" className="btn btn-primary">Revisar</Link>
                                     </div>
                                 </div>
                             </div>

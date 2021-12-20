@@ -75,20 +75,22 @@ export function Perfil() {
                             <div className="modal-dialog">
                                 <div className="modal-content">
                                     <div className="modal-header">
-                                        <h5 className="modal-title" id="staticBackdropLabel">Asignar envío a:</h5>
+                                        <h5 className="modal-title" id="staticBackdropLabel">Ingrese la información correspondiente</h5>
                                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div className="modal-body">
-                                        <div>
-                                            <label>Nombres</label>
-                                            <input type="text" ref={nombresactualizadosRef} />
-                                            <label>Apellidos</label>
-                                            <input type="text" ref={apellidosactualizadosRef} />
-                                            <label>Correo</label>
-                                            <input type="text" ref={correoactualizadoRef} />
-                                        </div>
-                                        <div className="modal-footer">
-                                            <button type="button" className="btn btn-primary" onClick={actualizar} >Actualizar</button>
+                                    <div className="row gx-2 align-items-center justify-content-center">
+                                        <div className="col-lg-8 col-xl-9 col-xxl-3">
+                                            <div>
+                                                <label>Nombres</label>
+                                                <input type="text" class="form-control form-control-sm" ref={nombresactualizadosRef} />
+                                                <label>Apellidos</label>
+                                                <input type="text" class="form-control form-control-sm" ref={apellidosactualizadosRef} />
+                                                <label>Correo</label>
+                                                <input type="text" class="form-control form-control-sm" ref={correoactualizadoRef} />
+                                            </div>
+                                            <div className="modal-footer">
+                                                <button type="button" className="btn btn-primary" onClick={actualizar} >Actualizar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
