@@ -14,27 +14,39 @@ export function RegistroMensajero() {
     const confirmarcontraseñaRef = useRef();
     const chequeadoRef = useRef();
 
-    const registrarse = () => {
+    async function registrarse()  {
         const nombres = nombresRef.current.value;
         const apellidos = apellidosRef.current.value;
-        const documento = documentoRef.current.value;
+        const tipodocumento = documentoRef.current.value;
         const numerodocumento = numerodocumentoRef.current.value;
         const correo = correoRef.current.value;
         const usuario = usuarioRef.current.value;
         const contraseña = contraseñaRef.current.value;
         const confirmarcontraseña = confirmarcontraseñaRef.current.value;
         const chequeado = chequeadoRef.current.checked;
+        const rol = "usuariomensajeria";
+        const recuperar = false;
 
-        if (validar(nombres, apellidos, numerodocumento, correo, usuario, contraseña, confirmarcontraseña, chequeado)) {
-            registrar(nombres, apellidos, documento, numerodocumento, correo, usuario, contraseña);
-            nombresRef.current.value = "";
-            apellidosRef.current.value = "";
-            documentoRef.current.value = "Choose...";
-            numerodocumentoRef.current.value = "";
-            correoRef.current.value = "";
-            usuarioRef.current.value = "";
-            contraseñaRef.current.value = "";
-            confirmarcontraseñaRef.current.value = "";
+
+        if (await validar(nombres, apellidos, numerodocumento, correo, usuario, contraseña, confirmarcontraseña, chequeado)) {
+            let respuesta = await registrar(nombres, apellidos, tipodocumento, numerodocumento, correo, usuario, contraseña, rol, recuperar);
+            if (respuesta.estado === "Ok") {
+                alert(respuesta.msg);
+                nombresRef.current.value = "";
+                apellidosRef.current.value = "";
+                documentoRef.current.value = "Choose...";
+                numerodocumentoRef.current.value = "";
+                correoRef.current.value = "";
+                usuarioRef.current.value = "";
+                contraseñaRef.current.value = "";
+                confirmarcontraseñaRef.current.value = "";
+            }
+            else {
+                alert(respuesta.msg);
+            }
+        
+
+            
         }
     }
     return (
@@ -42,7 +54,7 @@ export function RegistroMensajero() {
             <div className="container px-5 contenedorregistro">
                 <div className="row gx-5 align-items-center justify-content-center">
                     <div className="col-lg-8 col-xl-7 col-xxl-6">
-                        <form>
+                        <form className='formMensajero'>
                             <h2 className="text-center">REGISTRO MENSAJERO</h2>
                             <div className="col-sm form-group">
                                 <label className="form- label registrolabel">Nombres</label>

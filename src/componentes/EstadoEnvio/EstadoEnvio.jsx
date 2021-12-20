@@ -6,34 +6,34 @@ import { listarEstados, modificar } from "./EstadoService";
 
 export function EstadoEnvio() {
     const [listado, setListado] = useState([]);
-    useEffect( async () => {
+    useEffect(async () => {
         const respuesta = await listarEstados();
         setListado(respuesta.estados)
-    },[]);
-    const[_id, setId] = useState("");
+    }, []);
+    const [_id, setId] = useState("");
 
     const caracteristicasRef = useRef();
-    const comentariosRef= useRef();
-    const fechaentregaRef= useRef();
+    const comentariosRef = useRef();
+    const fechaentregaRef = useRef();
     const estadoenvioRef = useRef();
 
-    function mod(p){
+    function mod(p) {
         setId(p._id);
     }
 
-    async function modificarEstado(){
+    async function modificarEstado() {
         const caracteristicasfinales = caracteristicasRef.current.value;
         const comentarios = comentariosRef.current.value;
         const fechaentrega = fechaentregaRef.current.value;
         const estadoenvio = estadoenvioRef.current.value;
-        
-        const respuesta = await modificar(_id,caracteristicasfinales,comentarios,fechaentrega,estadoenvio);
 
-        if(respuesta.estado==="Ok"){
+        const respuesta = await modificar(_id, caracteristicasfinales, comentarios, fechaentrega, estadoenvio);
+
+        if (respuesta.estado === "Ok") {
             alert(respuesta.msg);
             window.location.href = "/estadoenvio";
         }
-        else{
+        else {
             alert(respuesta.msg);
         }
 
@@ -79,28 +79,31 @@ export function EstadoEnvio() {
                         </div>
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="modal-content text-center modalrecuperar text-white">
+                                    <div class="modal-header headerrecuperar">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Modificar envio</h5>
+                                        <button type="button" class="btn-close closerecuperar" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body bodyrecuperar">
+                                        <div>
+                                            <h6>Número único de envío:</h6>
+                                        </div>
                                         <label>{_id}</label>
                                         <div>
-                                            <label>Caracteristicas finales</label>
-                                            <input type="text" ref={caracteristicasRef}/>
+                                            <h6>Caracteristicas finales:</h6>
+                                            <input className="form-control inputsolicitudes" type="text" ref={caracteristicasRef} />
                                         </div>
                                         <div>
-                                            <label>Comentarios</label>
-                                            <input type="text" ref={comentariosRef}/>
+                                            <h6>Comentarios:</h6>
+                                            <input className="form-control inputsolicitudes" type="text" ref={comentariosRef} />
                                         </div>
                                         <div>
-                                            <label>Fecha de entrega</label>
-                                            <input type="date" ref={fechaentregaRef}/>
+                                            <h6>Fecha de entrega:</h6>
+                                            <input className="form-control inputsolicitudes" type="date" ref={fechaentregaRef} />
                                         </div>
                                         <div>
-                                            <label>Estado</label>
-                                            <select className="form-select selector" name="selector" ref={estadoenvioRef}>
+                                            <h6>Estado:</h6>
+                                            <select className="form-select selectorestadoenvio" name="selector" ref={estadoenvioRef}>
                                                 <option value="">...</option>
                                                 <option value="Programado">Programado</option>
                                                 <option value="Recogido">Recogido</option>
@@ -110,7 +113,7 @@ export function EstadoEnvio() {
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer footerrecuperar">
                                         <button type="button" class="btn btn-primary" onClick={modificarEstado}>Modificar</button>
                                     </div>
                                 </div>
