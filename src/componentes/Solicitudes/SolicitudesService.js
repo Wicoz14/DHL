@@ -1,6 +1,6 @@
 async function listarSolicitudes(){
     const token = localStorage.getItem("token");
-    const response = await  fetch(`http://localhost:8080/usuariomensajeria/solicitudes`,{
+    const response = await  fetch(`https://dhl-colombia.herokuapp.com/usuariomensajeria/solicitudes`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify()
@@ -12,7 +12,7 @@ async function encargar(_id,encargado){
     const token = localStorage.getItem("token");
     const envio ={_id,encargado};
     console.log(envio)
-    const response = await  fetch(`http://localhost:8080/usuariomensajeria/asignar`,{
+    const response = await  fetch(`https://dhl-colombia.herokuapp.com/usuariomensajeria/asignar`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify(envio)
