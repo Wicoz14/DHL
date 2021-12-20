@@ -26,7 +26,7 @@ function validaractualizacion(nombres, apellidos, correo){
 
 async function perfil(){
     const token = localStorage.getItem("token")
-    const response = await fetch(`http://localhost:8080/perfil/mostrarperfil`,{
+    const response = await fetch(`https://dhl-colombia.herokuapp.com/perfil/mostrarperfil`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify()
@@ -39,7 +39,7 @@ async function actualizarusuario(nombres, apellidos, correo){
     const perfil = {nombres, apellidos,correo};
     //console.log(perfil);
     const token = localStorage.getItem("token")
-    const response = await fetch(`http://localhost:8080/perfil/modificarperfil`,{
+    const response = await fetch(`https://dhl-colombia.herokuapp.com/perfil/modificarperfil`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
         body: JSON.stringify(perfil)

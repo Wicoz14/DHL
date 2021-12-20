@@ -1,6 +1,6 @@
 async function listarmisenvios(){
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/envios/misenvios`,{
+    const response = await fetch(`https://dhl-colombia.herokuapp.com/envios/misenvios`,{
         method: "POST", 
         headers: {"content-type":"application/json", "authorization": `Bearer ${token}`},
     })
