@@ -58,12 +58,12 @@ export function RealizarEnvio() {
                                 <h2 className="text-center">Envío de Paquetes</h2>
                                 <h3>Datos del solicitante</h3>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Día a recoger paquete</label>
+                                    <label className="form- labelenvio">Día a recoger paquete</label>
                                     <input ref={fecharecogidaRef} type="date" className="form-control" placeholder="fecha recogida" required />
                                 </div>
 
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Departamento</label>
+                                    <label className="form- labelenvio">Departamento</label>
                                     <select ref={departamentoRef} className="form-select selector" name="selector">
                                         <option value="DEFAULT" selected>Seleccionar...</option>
                                         <option value="Amazonas">Amazonas</option>
@@ -99,7 +99,7 @@ export function RealizarEnvio() {
                                     </select>
                                 </div>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Ciudad</label>
+                                    <label className="form- labelenvio">Ciudad</label>
                                     <select ref={ciudadRef} className="form-select selector" name="selector">
                                     <option value="DEFAULT" selected>Seleccionar...</option>
                                     <option value="Leticia">Leticia</option>
@@ -136,27 +136,27 @@ export function RealizarEnvio() {
                                     </select>
                                 </div>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Dirección</label>
+                                    <label className="form- labelenvio">Dirección</label>
                                     <input ref={direccionRef} type="text" className="form-control" placeholder="Dirección" />
                                 </div>
                                 
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Alto</label>
+                                    <label className="form- labelenvio">Alto</label>
                                     <input ref={altoRef} type="number" className="form-control" placeholder="cm" />
                                 </div>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Ancho</label>
+                                    <label className="form- labelenvio">Ancho</label>
                                     <input ref={anchoRef} type="number" className="form-control" placeholder="cm" />
                                 </div>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Largo</label>
+                                    <label className="form- labelenvio">Largo</label>
                                     <input ref={largoRef} type= "number" className="form-control" placeholder="cm" />
                                 </div>
                                 
                                 
                                 <h3>Datos del receptor</h3>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Departamento</label>
+                                    <label className="form- labelenvio">Departamento</label>
                                     <select ref={departamentoentregaRef} className="form-select selector" name="selector">
                                         <option value="DEFAULT" selected>Seleccionar...</option>
                                         <option value="Amazonas">Amazonas</option>
@@ -193,12 +193,12 @@ export function RealizarEnvio() {
                                     </div>
                                     
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Número de documento</label>
+                                    <label className="form- labelenvio">Número de documento</label>
                                     <input ref={documentoentregaRef} type="number" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" />
                                 </div>
                             
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Ciudad</label>
+                                    <label className="form- labelenvio">Ciudad</label>
                                     <select ref={ciudadentregaRef} className="form-select selector" name="selector">
                                     <option value="DEFAULT" selected>Seleccionar...</option>
                                     <option value="Leticia">Leticia</option>
@@ -235,11 +235,11 @@ export function RealizarEnvio() {
                                     </select>
                                 </div>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Nombre Completo</label>
+                                    <label className="form- labelenvio">Nombre Completo</label>
                                     <input ref={nombreentregaRef} type="text" className="form-control" placeholder="Nombre Completo" />
                                 </div>
                                 <div className="col-md-6">
-                                    <label className="form- label enviolabel">Dirección</label>
+                                    <label className="form- labelenvio">Dirección</label>
                                     <input ref={direccionentregaRef} type="text" className="form-control" placeholder="Dirección" />
                                 </div>
                                 

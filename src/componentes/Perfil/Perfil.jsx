@@ -38,7 +38,7 @@ export function Perfil() {
         if (ProteccionURL() === 1) {
             return (
                 <Fragment>
-                    <div className="container px-5 contenedorregistro">
+                    <div className="container px-5 contenedorregistro text-white">
                         <div className="row gx-5 align-items-center justify-content-center">
                             <div className="col-lg-8 col-xl-7 col-xxl-6">
                                 <form>
