@@ -60,7 +60,7 @@ function validar(fecharecogida,alto,ancho,largo,direccion,direccionentrega,nombr
 
 
 async function realizarenvio(fecharecogida,alto,ancho,largo,departamento,ciudad,direccion,departamentoentrega,ciudadentrega,direccionentrega,nombreentrega,documentoentrega){
-    const nuevoenvio = {fecharecogida,alto,ancho,largo,departamento,ciudad,direccion,departamentoentrega,ciudadentrega,direccionentrega,nombreentrega,documentoentrega,"asignado":false};
+    const nuevoenvio = {fecharecogida,alto,ancho,largo,departamento,ciudad,direccion,departamentoentrega,ciudadentrega,direccionentrega,nombreentrega,documentoentrega,"asignado":false,"estado":""};
     console.log(nuevoenvio)
     const token = localStorage.getItem("token")
     const response = await fetch(`https://dhl-colombia.herokuapp.com/envios/registrarenvio`,{

@@ -48,11 +48,11 @@ export function Solicitudes() {
                                 <thead>
                                     <tr>
                                         <th scope="col"># del envío</th>
-                                        <th scope="col">Nombre</th>
                                         <th scope="col">Direccion</th>
                                         <th scope="col">Ciudad de origen</th>
                                         <th scope="col">Ciudad de destino</th>
                                         <th scope="col">Dirección destino</th>
+                                        <th scope="col">Entrega a:</th>
                                         <th scope="col">Caracteristticas del paquete</th>
                                         <th scope="col">Fecha de solicitud</th>
                                         <th scope="col">Asignar a</th>
@@ -62,11 +62,11 @@ export function Solicitudes() {
                                     {
                                         listado.map(p => <tr>
                                             <th scope="row">{p._id}</th>
-                                            <td>Mark</td>
                                             <td>{p.direccion}</td>
                                             <td>{p.ciudad}</td>
                                             <td>{p.ciudadentrega}</td>
                                             <td>{p.direccionentrega}</td>
+                                            <td>{p.nombreentrega}</td>
                                             <td>{p.alto + "-" + p.largo + "-" + p.ancho}</td>
                                             <td>{p.fecharecogida}</td>
                                             <td><button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => mod(p)}>Asignar</button></td>
