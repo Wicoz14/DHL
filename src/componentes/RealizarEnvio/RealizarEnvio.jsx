@@ -24,17 +24,17 @@ export function RealizarEnvio() {
         const alto = altoRef.current.value;
         const ancho = anchoRef.current.value;
         const largo = largoRef.current.value;
-        const departamento = departamentoRef.current.checked;
+        const departamento = departamentoRef.current.value;
         const ciudad = ciudadRef.current.value;
         const direccion = direccionRef.current.value;
-        const departamentoentrega = departamentoentregaRef.current.checked;
+        const departamentoentrega = departamentoentregaRef.current.value;
         const ciudadentrega = ciudadentregaRef.current.value;
         const direccionentrega = direccionentregaRef.current.value;
-        const nombreentrega = nombreentregaRef.current.checked;
+        const nombreentrega = nombreentregaRef.current.value;
         const documentoentrega = documentoentregaRef.current.value;
 
         console.log("lia")
-        if (await validar(fecharecogida,alto,ancho,largo,departamento,ciudad,direccion,departamentoentrega,ciudadentrega,direccionentrega,nombreentrega,documentoentrega)) {
+        if (await validar(fecharecogida,alto,ancho,largo,direccion,direccionentrega,nombreentrega,documentoentrega,departamento,departamentoentrega,ciudad,ciudadentrega)) {
           let respuesta = await realizarenvio(fecharecogida,alto,ancho,largo,departamento,ciudad,direccion,departamentoentrega,ciudadentrega,direccionentrega,nombreentrega,documentoentrega);
           console.log(respuesta)
           if (respuesta.estado === "Ok") {
@@ -65,7 +65,7 @@ export function RealizarEnvio() {
                                 <div className="col-md-6">
                                     <label className="form- label enviolabel">Departamento</label>
                                     <select ref={departamentoRef} className="form-select selector" name="selector">
-                                        <option selected>Seleccionar...</option>
+                                        <option value="DEFAULT" selected>Seleccionar...</option>
                                         <option value="Ama">Amazonas</option>
                                         <option value="Ant">Antioquia</option>
                                         <option value="Ara">Arauca</option>
@@ -102,7 +102,7 @@ export function RealizarEnvio() {
                                 <div className="col-md-6">
                                     <label className="form- label enviolabel">Ciudad</label>
                                     <select ref={ciudadRef} className="form-select selector" name="selector">
-                                    <option selected>Seleccionar...</option>
+                                    <option value="DEFAULT" selected>Seleccionar...</option>
                                     <option value="Let">Leticia</option>
                                     <option value="Med">Medellín</option>
                                     <option value="Ara">Arauca</option>
@@ -133,7 +133,7 @@ export function RealizarEnvio() {
                                     <option value="Iba">Ibagué</option>
                                     <option value="Cal">Cali</option>
                                     <option value="Mit">Mitú</option>
-                                    <option value="PCr">Puerto Carreño"</option>
+                                    <option value="PCr">Puerto Carreño</option>
                                     </select>
                                 </div>
                                 <div className="col-md-6">
@@ -151,7 +151,7 @@ export function RealizarEnvio() {
                                 </div>
                                 <div className="col-md-6">
                                     <label className="form- label enviolabel">Largo</label>
-                                    <input ref={largoRef} type="number" className="form-control" placeholder="cm" />
+                                    <input ref={largoRef} type= "number" className="form-control" placeholder="cm" />
                                 </div>
                                 
                                 
@@ -159,7 +159,7 @@ export function RealizarEnvio() {
                                 <div className="col-md-6">
                                     <label className="form- label enviolabel">Departamento</label>
                                     <select ref={departamentoentregaRef} className="form-select selector" name="selector">
-                                        <option selected>Seleccionar...</option>
+                                        <option value="DEFAULT" selected>Seleccionar...</option>
                                         <option value="Ama">Amazonas</option>
                                         <option value="Ant">Antioquia</option>
                                         <option value="Ara">Arauca</option>
@@ -202,7 +202,7 @@ export function RealizarEnvio() {
                                 <div className="col-md-6">
                                     <label className="form- label enviolabel">Ciudad</label>
                                     <select ref={ciudadentregaRef} className="form-select selector" name="selector">
-                                    <option selected>Seleccionar...</option>
+                                    <option value="DEFAULT" selected>Seleccionar...</option>
                                     <option value="Let">Leticia</option>
                                     <option value="Med">Medellín</option>
                                     <option value="Ara">Arauca</option>
