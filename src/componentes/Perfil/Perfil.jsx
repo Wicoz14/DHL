@@ -17,13 +17,13 @@ export function Perfil() {
     const apellidosactualizadosRef = useRef()
     const correoactualizadoRef = useRef()
 
-    async function actualizar(){
+    async function actualizar() {
         const nombres = nombresactualizadosRef.current.value;
         const apellidos = apellidosactualizadosRef.current.value;
         const correo = correoactualizadoRef.current.value;
 
         if (await validaractualizacion(nombres, apellidos, correo)) {
-            let respuesta = await actualizarusuario(nombres, apellidos,correo);
+            let respuesta = await actualizarusuario(nombres, apellidos, correo);
             if (respuesta.estado === "Ok") {
                 alert(respuesta.msg);
                 window.location.href = "/perfil"
@@ -45,24 +45,24 @@ export function Perfil() {
                                     <h2 className="text-center">PERFIL</h2>
                                     <div className="col-sm form-group">
                                         <label className="form- label registrolabel">Nombres</label>
-                                        <input value={listado.nombres} type="text" className="form-control" placeholder="Nombres" required disable/>
+                                        <input value={listado.nombres} type="text" className="form-control" placeholder="Nombres" required disable />
                                     </div>
                                     <div className="col-sm form-group">
                                         <label className="form- label registrolabel">Apellidos</label>
-                                        <input value={listado.apellidos} type="text" className="form-control" placeholder="Apellidos" disable/>
+                                        <input value={listado.apellidos} type="text" className="form-control" placeholder="Apellidos" disable />
                                     </div>
                                     <div className="col-sm form-group">
                                         <label className="form- label registrolabel">Documento de identidad</label>
-                                        <input value={listado.tipodocumento} type="texto" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" disable/>
-                                        <input value={listado.numerodocumento} type="number" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" disable/>
+                                        <input value={listado.tipodocumento} type="texto" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" disable />
+                                        <input value={listado.numerodocumento} type="number" name="doc" className="form-control" placeholder="Número de documento" id="doc" required minLength="6" disable />
                                     </div>
                                     <div className="col-sm form-group">
                                         <label className="form- label registrolabel">Correo</label>
-                                        <input value={listado.correo} type="email" className="form-control" placeholder="Correo" disable/>
+                                        <input value={listado.correo} type="email" className="form-control" placeholder="Correo" disable />
                                     </div>
                                     <div className="col-sm form-group">
                                         <label className="form- label registrolabel">Nombre de usuario</label>
-                                        <input value={listado.usuario} type="text" className="form-control" placeholder="Usuario" disable/>
+                                        <input value={listado.usuario} type="text" className="form-control" placeholder="Usuario" disable />
                                     </div>
                                     <div className="botonactualizar">
                                         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Modificar</button>
@@ -73,25 +73,22 @@ export function Perfil() {
                         </div>
                         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog">
-                                <div className="modal-content">
-                                    <div className="modal-header">
+                                <div className="modal-content text-center modalrecuperar text-white">
+                                    <div className="modal-header headerrecuperar">
                                         <h5 className="modal-title" id="staticBackdropLabel">Ingrese la información correspondiente</h5>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" className="btn-close closerecuperar" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div className="row gx-2 align-items-center justify-content-center">
-                                        <div className="col-lg-8 col-xl-9 col-xxl-3">
-                                            <div>
-                                                <label>Nombres</label>
-                                                <input type="text" class="form-control form-control-sm" ref={nombresactualizadosRef} />
-                                                <label>Apellidos</label>
-                                                <input type="text" class="form-control form-control-sm" ref={apellidosactualizadosRef} />
-                                                <label>Correo</label>
-                                                <input type="text" class="form-control form-control-sm" ref={correoactualizadoRef} />
-                                            </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-primary" onClick={actualizar} >Actualizar</button>
-                                            </div>
-                                        </div>
+
+                                    <div className="modal-body bodyrecuperar">
+                                        <label>Nombres</label>
+                                        <input type="text" class="form-control inputsolicitudes" ref={nombresactualizadosRef} />
+                                        <label>Apellidos</label>
+                                        <input type="text" class="form-control inputsolicitudes" ref={apellidosactualizadosRef} />
+                                        <label>Correo</label>
+                                        <input type="text" class="form-control inputsolicitudes" ref={correoactualizadoRef} />
+                                    </div>
+                                    <div className="modal-footer footerrecuperar">
+                                        <button type="button" className="btn btn-primary" onClick={actualizar} >Actualizar</button>
                                     </div>
                                 </div>
                             </div>
