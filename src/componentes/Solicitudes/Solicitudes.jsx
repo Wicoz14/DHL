@@ -53,7 +53,7 @@ export function Solicitudes() {
                                         <th scope="col">Ciudad de destino</th>
                                         <th scope="col">Dirección destino</th>
                                         <th scope="col">Entrega a:</th>
-                                        <th scope="col">Caracteristticas del paquete</th>
+                                        <th scope="col">Caracteristticas del paquete(Al-L-An) en cms</th>
                                         <th scope="col">Fecha de solicitud</th>
                                         <th scope="col">Asignar a</th>
                                     </tr>
